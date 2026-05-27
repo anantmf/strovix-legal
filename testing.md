@@ -21,26 +21,6 @@ You will see the **Portal Management Screen**
 ### Step 3: Portal Configuration Form
 The **Add Portal Screen** will display input fields:
 
-```
-┌─────────────────────────────────┐
-│  Add New Portal                 │
-├─────────────────────────────────┤
-│  Portal URL                     │
-│  [____________________________]  │
-│                                 │
-│  Username                       │
-│  [____________________________]  │
-│                                 │
-│  Password                       │
-│  [____________________________]  │
-│                                 │
-│  MAC Address                    │
-│  [____________________________]  │
-│                                 │
-│              [Cancel] [Connect] │
-└─────────────────────────────────┘
-```
-
 ### Step 4: Enter the Public IPTV M3U URL
 
 **In the "Portal URL" field, copy and paste:**
@@ -91,3 +71,5 @@ After successful connection, you will return to the **Home Screen** and see:
   - "Recently watched live channels" (empty on first load)
   - "Favorites" (empty on first load)
   - "Live categories" (populated with channel categories)
+ 
+Now you can test functionality of the app.
