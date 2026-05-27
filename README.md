@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This Privacy Policy ("Policy") describes how IPTV MAC STALKER PLAYER ("we," "us," "our," or "Company") collects, uses, discloses, and otherwise processes personal information in connection with our mobile application ("App") and related services.
+This Privacy Policy ("Policy") describes how Strovix App ("we," "us," "our," or "Company") collects, uses, discloses, and otherwise processes personal information in connection with our mobile application ("App") and related services.
 
 We are committed to protecting your privacy. Please read this Policy carefully to understand our practices regarding your personal information.
 
