@@ -13,6 +13,24 @@ strovixapp@gmail.com
 
 ---
 
+## How to Join the Beta Testing Program
+
+Ready to test? Here's how to get started:
+
+1. **Join the Google Group:** https://groups.google.com/g/strovixtesters
+   - This is where we share beta updates, announcements, and coordinate testing
+   - You'll get access to the beta app through the Play Store once you join
+
+2. **Download the Beta App:** https://play.google.com/apps/testing/com.strovix.mobile
+   - After joining the Google Group, you'll be able to download the beta version
+   - Install it on your Android phone, tablet, or Android TV
+
+3. **Start Testing:** Follow the checklist below and send us your feedback!
+
+**Questions?** Email us at strovixapp@gmail.com
+
+---
+
 ## What is Strovix?
 
 Strovix connects to your IPTV service and lets you watch:
