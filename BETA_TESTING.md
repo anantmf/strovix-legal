@@ -15,40 +15,30 @@ strovixapp@gmail.com
 
 ## What is Strovix?
 
-A native React Native app that connects to your existing IPTV provider and plays:
+Strovix connects to your IPTV service and lets you watch:
 
-- **Live TV** channels with EPG (program guide)
-- **Movies (VOD)** — full catalog with metadata, posters, ratings
-- **Series & Episodes** — multi-season hierarchy with episode picker
+- **Live TV** channels with a program guide (shows what's on now and coming up)
+- **Movies** — browse a full catalog with descriptions, cover art, and ratings
+- **TV Series** — watch episodes organized by season
 
-It runs the **same codebase** on phone, tablet, and Android TV. The TV build understands the D-pad / remote.
+The app works the same way on your phone, tablet, and TV. On Android TV, you control it with your remote.
 
 ---
 
-## Supported Portals & Formats
+## Supported Services
 
-You can connect Strovix to:
-
-- **Stalker / MAG portals** (standard `load.php`)
-- **Generic portals** (`portal.php` variant for non-standard implementations)
-- **M3U playlists** (plain `.m3u` / `.m3u8` URLs)
-
-Auto-detect figures out which one your URL is when you set up a profile.
-
-**Stream protocols played:** HLS (`.m3u8`), MPEG-TS, progressive MP4 / MKV, and anything ExoPlayer can decode (H.264, H.265 / HEVC, VP9, AAC, MP3, Opus, MP2 audio via FFmpeg renderer).
+You can connect Strovix to most major IPTV services. Just paste your service URL and login credentials when setting up a profile. The app automatically detects what type of service you're using.
 
 ---
 
 ## Multi-Profile
 
-You can save multiple portals at once and switch between them. Each profile stores:
+You can save multiple services at once and switch between them. Each profile remembers:
 
-- Portal URL + MAC address (for Stalker)
-- Device ID, serial, signature (advanced — optional override)
-- Concurrent fetch threads (1–N; default 5)
-- Preferred timezone (for accurate EPG times)
-- Display name
-- Cached login token (skips re-handshake on next launch)
+- Your service URL and login
+- A display name so you remember which service it is
+- Your preferred timezone (for accurate program guides)
+- Your login session, so you don't have to sign in again next time
 
 ---
 
@@ -65,19 +55,17 @@ You can save multiple portals at once and switch between them. Each profile stor
   - **Recent-first** — categories you've visited float to the top
   - **Alphabetical**
 - Synthetic **★ Favorites** and **↻ Continue** rows pinned at the very top
-- Adult / censored category filtering (hidden by default)
-- Per-type sorts:
-  - **IPTV** — by channel number, or A–Z
-  - **VOD / Series** — recently added, A–Z, by year, by rating
-- Infinite scroll with "Page X of Y" indicator
-- Per-category client-side search
-- **TV layout**: 4-column grid with an always-visible info pane on the right
+- Filter out adult categories if you want (hidden by default)
+- Sort by:
+  - **Live TV** — by channel number or name
+  - **Movies & Series** — by date added, name, year, or rating
+- Search within each category
+- **TV layout**: 4-column grid with a details panel on the right
 
 ### Universal Search
-- Searches across IPTV / Movies / Series in parallel
-- Per-type toggle (defaults: VOD + Series on, IPTV off because matches get noisy)
-- Per-type "Load more" pagination
-- Remembers your enabled types
+- Search across all your content at once
+- Filter which types you want to search (movies, series, live TV)
+- Remembers your preferences next time
 
 ### Series Detail
 - Season picker (remembers your last viewed season per series)
@@ -92,22 +80,22 @@ You can save multiple portals at once and switch between them. Each profile stor
 **Playback speeds (VOD only):**
 `0.5× · 0.75× · 1× · 1.25× · 1.5× · 1.75× · 2× · 2.5× · 3×`
 
-**Configurable skip increments — back and forward independent:**
+**Skip forward and backward by:**
 `10s · 15s · 30s · 1m · 2m · 5m · 10m · 15m · 30m`
 
-You adjust them with inline **−** / **+** buttons directly under each skip button on the transport row (D-pad reachable on TV).
+You can customize these times. On TV, you can control them with your remote.
 
-**Draggable thumb on mobile / tablet**
-Medium blue dot on the seek bar. Drag it to scrub. Tap anywhere on the bar to seek directly.
+**On phone/tablet:**
+Drag the blue dot on the progress bar to jump to any spot. Tap anywhere on the bar to seek.
 
-**TV D-pad seek bar**
-When the seek bar is focused: LEFT / RIGHT seeks by your current increment, OK commits immediately, BACK cancels and restores playback state.
+**On TV:**
+Use the left/right buttons on your remote to skip back or forward. Press OK to confirm.
 
-**Aspect ratio** — Fit, Fill, Stretch (cycle via in-player menu).
+**Aspect ratio** — Fit, Fill, Stretch (adjust in player menu).
 
 **Mute** button.
 
-**External player launch** — VLC, MX Player Free, MX Player Pro, system chooser, or a custom Android package name. Passes the resume position + title + headers as an Intent.
+**Send to another app** — Open the video in VLC or other media players on your device if you prefer.
 
 ---
 
@@ -115,22 +103,17 @@ When the seek bar is focused: LEFT / RIGHT seeks by your current increment, OK c
 
 This is one of the most feature-rich parts of the app.
 
-**Formats supported:**
-- **SRT** (SubRip)
-- **VTT** (WebVTT)
-- **TTML / DFXP / XML**
+**Subtitle sources:**
+- **Built-in subtitles** from your video
+- **OpenSubtitles.com** — search and download subtitles right from the player
+- **Your device** — pick a subtitle file from your phone or tablet
+- **Online URL** — paste a link to a subtitle file
 
-**Sources:**
-- **Embedded tracks** that the stream itself advertises
-- **OpenSubtitles.com** — search and download from inside the player
-- **Local file** picker (Android) — load an SRT / VTT from your device
-- **Remote URL** — paste an HTTP(S) link to a subtitle file
+**Your subtitle choice is remembered** — if you pick a subtitle track for a movie, it automatically plays that track next time.
 
-**Per-content persistence** — your subtitle choice for a movie / episode is remembered. Next time you play it, your track is auto-selected.
+**Adjust timing** — if subtitles are out of sync, you can shift them earlier or later.
 
-**Subtitle delay (offset)** — slide cues earlier or later in 0.1 s and 0.5 s steps from MENU → SUBTITLES.
-
-**OpenSubtitles credentials** are entered once in Settings (see the separate [OPENSUBTITLES SETUP](https://anantmf.github.io/strovix-legal/OPENSUBTITLES_SETUP) guide).
+To use OpenSubtitles, add your login once in Settings (see the [OPENSUBTITLES SETUP](https://anantmf.github.io/strovix-legal/OPENSUBTITLES_SETUP) guide).
 
 ---
 
@@ -138,46 +121,38 @@ This is one of the most feature-rich parts of the app.
 
 Long-press a VOD tile or hit the download button on a series episode to queue it.
 
-- Status: queued → downloading → completed (or failed / paused)
-- Configurable max concurrent downloads (default 1)
-- Optional Wi-Fi only toggle
-- Downloads screen with active / completed / failed counts, total storage used
-- Bulk "clear all completed" with confirmation
-- Offline playback works **without portal connection** — content plays straight from disk, posters and titles preserved
+- See download progress and status
+- Set how many videos can download at once
+- Optionally only download over Wi-Fi
+- Clear downloaded videos when done
+- Play downloaded videos anytime, even offline (no internet needed)
 
 ---
 
-## Form Factor Support
+## Supported Devices
 
-| Device | What's tuned for it |
+| Device | Optimized for |
 |---|---|
-| Android phone | Portrait + landscape, status bar auto-hides in player, swipe-friendly hit targets, bottom-sheet menus |
-| Android tablet | Landscape-primary, multi-column grids, right-side menu drawer |
-| Android TV / Fire TV | D-pad, 4-column grids, info pane, focus-aware Pressables, TVFocusGuideView focus trapping, Leanback launcher entry, 320×180 banner asset |
-| iOS phone | Portrait + landscape (no native brightness — uses dim overlay) |
-| iOS tvOS | Apple TV 4th gen+ via Siri Remote |
-
-**OS requirements:** Android 11+ (API 30+), iOS / tvOS 13+.
+| Android phone | Portait and landscape, touch controls, bottom menus |
+| Android tablet | Landscape, multi-column layouts, side menu |
+| Android TV / Fire TV | Remote control navigation, 4-column grids with details panel |
 
 ---
 
 ## TV-Specific Features
 
-- D-pad navigation across the entire app (Home, Catalog, Search, Player, Settings)
-- TV-specific Pressable with working `onFocus` / `onBlur` (this is patched in our `TVPressable` component because RN-tvOS 0.81 doesn't dispatch focus events through the regular bridge)
-- **Focus styles:** Classic, High Contrast, Neon (Settings → UI)
-- Optional D-pad haptic feedback
-- **TV Focus Debug Overlay** — yellow outline around the focused view, tag name, bounds, and last 10 focus transitions (Settings → Playback → "Show focus debug overlay")
-- Hardware media keys (PLAY / PAUSE / NEXT / PREV) routed to the playback controller
-- Channel zap on the live HIDDEN chrome (LEFT / RIGHT changes channel)
-- BACK button: first press hides chrome, second press exits
+- Navigate the entire app with your remote
+- **Focus styles:** Classic, High Contrast, Neon — pick what's easiest to see (Settings → UI)
+- Optional haptic feedback on your remote
+- Use your media remote buttons (play, pause, next, previous)
+- On Live TV, left/right arrows change channels
+- Press BACK to hide controls, press again to go back
 
 ---
 
 ## Settings (Highlights)
 
 **Playback**
-- Use Internal Player v2 (beta) — on / off
 - Use VLC fallback adapter — on / off
 - External player target: System chooser / VLC / MX Free / MX Pro / Custom package
 - Always open externally — on / off
@@ -191,13 +166,12 @@ Long-press a VOD tile or hit the download button on a series episode to queue it
 
 **Subtitles**
 - OpenSubtitles API key
-- OpenSubtitles username + password (optional but recommended — boosts your daily quota)
-- Preferred subtitle language (ISO-639-1: `en`, `es`, `fr`, …)
-- App User-Agent (defaults to `Strovix v1.0`; only change if you registered a different consumer name)
-- **Test OpenSubtitles connection** button
+- OpenSubtitles username and password (optional but gives you more searches)
+- Preferred subtitle language (English, Spanish, French, etc.)
+- **Test your OpenSubtitles connection** button
 
 **Catalog**
-- Category sort mode — recent-first / alphabetical
+- Sort categories by recently visited or alphabetically
 - Per-type sort overrides (IPTV / VOD / Series)
 - Hide adult / censored content — on / off (default: on)
 
@@ -247,22 +221,6 @@ Everything is stored locally on your device. With cloud sync enabled, the import
 - **Downloads** (queue with status / progress / file paths)
 - **Cloud auth token** (when signed in)
 
-
----
-
-## Known Limitations (v2.0)
-
-A few things are stubbed in the new player and will land in v2.1:
-
-- **Audio track switching** — UI shows a placeholder "Coming soon" row
-- **Manual quality / bitrate selector** — "Auto" only for now
-- **Episodes menu inside the player** — currently routes you back to the Series Detail screen (works but extra tap)
-
-Other notes:
-- **No casting / Chromecast** support yet
-- **No Picture-in-Picture** yet
-- **No web build** (a stub exists; phone / tablet / TV are the targets)
-- Internal Player v2 is **off by default** during the v2.0 smoke test — flip the toggle in Settings → Playback
 
 ---
 
