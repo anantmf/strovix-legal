@@ -17,11 +17,11 @@ strovixapp@gmail.com
 
 Ready to test? Here's how to get started:
 
-1. **Join the Google Group:** https://groups.google.com/g/strovixtesters
+1. **Join the Google Group:** [https://groups.google.com/g/strovixtesters](https://groups.google.com/g/strovixtesters)
    - This is where we share beta updates, announcements, and coordinate testing
    - You'll get access to the beta app through the Play Store once you join
 
-2. **Download the Beta App:** https://play.google.com/apps/testing/com.strovix.mobile
+2. **Download the Beta App:** [https://play.google.com/apps/testing/com.strovix.mobile](https://play.google.com/apps/testing/com.strovix.mobile)
    - After joining the Google Group, you'll be able to download the beta version
    - Install it on your Android phone, tablet, or Android TV
 
