@@ -1,8 +1,15 @@
 # Strovix — Beta Tester Invitation
 
-Thanks for helping me test Strovix! This is a modern IPTV player built for people who already have a portal subscription (Stalker / MAG / Xtream / M3U) and want a single app that plays well on **phone, tablet, and Android TV / Fire TV**.
+Thanks for helping me test Strovix! This is a modern IPTV player built for people who already have a portal subscription (Stalker / MAG / Xtream / M3U) and want a single app that plays well on **Android phones, tablets, and Android TV**.
+
+**📱 Supported Platforms:**
+- **Android Phone & Tablet** — Full IPTV streaming with all features
+- **Android TV** — Optimized TV experience with remote control support
+- **iOS** — Coming soon!
 
 Below is everything you can poke at, plus a checklist of what I'd love feedback on.
+
+strovixapp@gmail.com
 
 ---
 
@@ -123,7 +130,7 @@ This is one of the most feature-rich parts of the app.
 
 **Subtitle delay (offset)** — slide cues earlier or later in 0.1 s and 0.5 s steps from MENU → SUBTITLES.
 
-**OpenSubtitles credentials** are entered once in Settings (see the separate `OPENSUBTITLES_SETUP.md` guide).
+**OpenSubtitles credentials** are entered once in Settings (see the separate [OPENSUBTITLES SETUP](https://anantmf.github.io/strovix-legal/OPENSUBTITLES_SETUP) guide).
 
 ---
 
